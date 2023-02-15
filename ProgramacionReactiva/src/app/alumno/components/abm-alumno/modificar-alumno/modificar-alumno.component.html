@@ -1,0 +1,42 @@
+<h1 mat-dialog-title>Modificar Alumno</h1>
+<div mat-dialog-content>
+  <form [formGroup]="formulario" (ngSubmit)="login()">
+    <div class="col-md-12 mb-3 mt-3">
+      <input type="text" class="form-control" placeholder="Usuario" required formControlName="usuario">
+      <div class="invalido"
+        *ngIf="formulario.controls['usuario'].dirty && formulario.controls['usuario'].errors?.['required']">
+        No puede estar
+        vacío</div>
+    </div>
+    <div class="col-md-12 mb-3">
+      <input type="text" class="form-control" placeholder="Curso" required formControlName="curso">
+      <div class="invalido"
+        *ngIf="formulario.controls['curso'].dirty && formulario.controls['curso'].errors?.['required']">
+        No puede estar
+        vacío</div>
+    </div>
+    <div class="col-md-12 mb-3">
+      <input type="text" class="form-control" placeholder="Comision" required formControlName="comision">
+      <div class="invalido"
+        *ngIf="formulario.controls['comision'].dirty && formulario.controls['comision'].errors?.['required']">
+        No puede estar
+        vacío</div>
+    </div>
+    <div class="col-md-12 mb-3">
+      <input type="text" class="form-control" placeholder="Email" required formControlName="email">
+      <div class="valido" *ngIf="formulario.controls['email'].valid">Campo correcto</div>
+      <div class="invalido"
+        *ngIf="formulario.controls['email'].dirty && formulario.controls['email'].errors?.['required']">
+        No puede estar
+        vacío</div>
+      <div class="invalido"
+        *ngIf="formulario.controls['email'].dirty && formulario.controls['email'].errors?.['pattern']">
+        El formato es
+        incorrecto</div>
+    </div>
+  </form>
+</div>
+<div mat-dialog-actions>
+  <button type="button" mat-button>Cerrar</button>
+  <button mat-flat-button>Editar</button>
+</div>

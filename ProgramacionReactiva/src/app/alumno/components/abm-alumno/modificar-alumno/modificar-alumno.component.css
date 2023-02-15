@@ -1,0 +1,11 @@
+.valido{
+    margin: .5rem;
+    color: green;
+    margin-bottom: -.8rem;
+}
+
+.invalido{
+    margin: .5rem;
+    color: red;
+    margin-bottom: -.5rem;
+}
