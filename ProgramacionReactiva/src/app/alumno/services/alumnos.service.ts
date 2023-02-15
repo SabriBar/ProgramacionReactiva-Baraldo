@@ -134,6 +134,7 @@ export class AlumnosService {
   constructor() {
     this.alumnos$ = new BehaviorSubject(this.alumnos);
 
+    //MAP
     of(this.alumnos).pipe(
       map((alumnos: Alumno[]) =>{
         return alumnos.filter((alumno: Alumno) => alumno.curso.nombre == 'Angular')
